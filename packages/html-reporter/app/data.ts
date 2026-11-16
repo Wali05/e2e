@@ -239,5 +239,8 @@ export function formatCost(usd: number): string {
 }
 
 export function formatTokens(tokens: number): string {
-  return tokens < 1000 ? String(tokens) : `${(tokens / 1000).toFixed(1)}k`;
+  if (tokens < 1000) return String(tokens);
+  const hundreds = Math.round(tokens / 100);
+  if (hundreds < 10_000) return `${(hundreds / 10).toFixed(1)}k`;
+  return `${(tokens / 1_000_000).toFixed(1)}M`;
 }
