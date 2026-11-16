@@ -418,6 +418,8 @@ describe('acp', () => {
     await eventually(() => expect(log().filter((entry) => 'prompt' in entry)).toHaveLength(1));
     first.abortStep(new AgentError('STEP_TIMEOUT', 'the first step timed out'));
     await expect(run).rejects.toMatchObject({ code: 'STEP_TIMEOUT' });
+    // The step rejects without waiting for the agent, which logs the cancel on its own time; a late write lands in the directory teardown removes.
+    await eventually(() => expect(log()).toContainEqual({ cancelled: true }));
 
     const second = context({ attempt: { attempt: first.ctx.attempt as never, end: first.end } });
     const next = executor.runStep(second.ctx);
