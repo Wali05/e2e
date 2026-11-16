@@ -195,6 +195,10 @@
       {
         "id": "ci",
         "label": "CI"
+      },
+      {
+        "id": "drag-and-drop",
+        "label": "Drag and drop"
       }
     ],
     "platform": [
@@ -1815,6 +1819,58 @@
         ],
         "useCase": [
           "e-commerce"
+        ],
+        "platform": [
+          "web"
+        ]
+      }
+    },
+    {
+      "slug": "mytimetable",
+      "title": "Testing a drag-and-drop timetable planner with e2e",
+      "shortTitle": "MyTimetable",
+      "description": "Course search, enrolment numbers, and dragging classes between time slots in a Vite and React timetable planner, tested with locators and the agent.",
+      "source": "community",
+      "repository": "https://github.com/samanyudas/mytimetable/tree/12e115b673c4a964176288caae7b1f386f18c467/e2e",
+      "author": {
+        "name": "Samanyu Das",
+        "github": "samanyudas"
+      },
+      "license": "MIT",
+      "licenseUrl": "https://github.com/samanyudas/mytimetable/blob/12e115b673c4a964176288caae7b1f386f18c467/LICENSE",
+      "tags": {
+        "framework": [
+          "vite",
+          "react"
+        ],
+        "useCase": [
+          "drag-and-drop"
+        ],
+        "platform": [
+          "web"
+        ]
+      }
+    },
+    {
+      "slug": "langgraph-mcp-isolation",
+      "title": "Running isolated e2e MCP sessions from LangGraph",
+      "shortTitle": "LangGraph + MCP",
+      "description": "Two isolated browser sessions coordinated by a compiled Python LangGraph, with exception and cancellation cleanup over stdio MCP.",
+      "source": "community",
+      "repository": "https://github.com/jxnxts/e2e-langgraph-mcp-example/tree/ab80514b5d35c47124e06efc48a7ab658062403c",
+      "author": {
+        "name": "Jonatas Soares",
+        "github": "jxnxts"
+      },
+      "license": "Apache-2.0",
+      "tags": {
+        "framework": [
+          "python",
+          "nodejs"
+        ],
+        "useCase": [
+          "test-isolation",
+          "mcp"
         ],
         "platform": [
           "web"
